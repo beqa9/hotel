@@ -23,13 +23,13 @@ repositories {
 
 dependencies {
 	implementation(
-			'org.postgresql:postgresql:42.2.5',
+			'org.postgresql:postgresql:42.5.1',
 			'org.apache.commons:commons-lang3:3.13.0',
 			'org.springframework.boot:spring-boot-starter-data-jpa',
 			'org.springframework.boot:spring-boot-starter-web',
 			'org.springframework.boot:spring-boot-starter-validation',
 			//'org.springframework.boot:spring-boot-starter-security',
-			//'jakarta.validation:jakarta.validation-api:3.0.2',
+			'jakarta.validation:jakarta.validation-api:3.0.2',
 			'org.flywaydb:flyway-core',
 			'org.apache.poi:poi-ooxml:5.2.4',
 			'javax.activation:activation:1.1'

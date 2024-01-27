@@ -1,22 +1,14 @@
 package Hotel.models;
 
-import Hotel.entities.Room;
 import lombok.Builder;
 
 @Builder
 public record RoomModel(
-        Integer id,
+        Integer roomId,
         Integer roomNumber,
         String category,
-        boolean isSmoking,
-        Integer hotelId
+        Integer capacity,
+        float price
+
 ) {
-    public static RoomModel fromRoom(Room room) {
-        return RoomModel.builder()
-                .id(room.getId())
-                .roomNumber(room.getRoomNumber())
-                .category(room.getCategory())
-                .isSmoking(room.isSmoking())
-                .build();
-    }
 }

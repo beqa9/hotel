@@ -13,7 +13,7 @@ import lombok.Setter;
 @Table(schema = "public", name = "room")
 public class Room {
     @Id
-    private Integer id;
+    private Integer roomId;
 
     @Column(name = "room_number")
     private Integer roomNumber;
@@ -21,6 +21,10 @@ public class Room {
     @Column(name = "category")
     private String category;
 
-    @Column(name = "is_smoking")
-    private boolean isSmoking;
+    @Column(name = "capacity")
+    private Integer capacity;
+
+    @Column(name = "price")
+    private float price;
+
 }

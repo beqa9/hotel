@@ -21,11 +21,13 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public Room addRoom(RoomModel roomModel) {
+    public Room addRoomByIdAndModel(Integer id, RoomModel roomModel) {
         Room room = new Room();
+        room.setRoomId(id);
         room.setRoomNumber(roomModel.roomNumber());
         room.setCategory(roomModel.category());
-        room.setSmoking(roomModel.isSmoking());
+        room.setCapacity(roomModel.capacity());
+        room.setPrice(roomModel.price());
         return roomRepository.save(room);
     }
 }

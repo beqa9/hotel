@@ -6,10 +6,9 @@ import Hotel.services.RoomService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/rooms")
+@RequestMapping("/room")
 public class RoomController {
     private final RoomService roomService;
 
@@ -17,14 +16,13 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    @GetMapping("/everything")
+    @GetMapping("/all")
     public List<Room> getAllRooms() {
         return roomService.getAllRooms();
     }
 
     @PostMapping("/add")
-    public RoomModel addRoom(@RequestBody RoomModel roomModel) {
-        Room addedRoom = roomService.addRoom(roomModel);
-        return RoomModel.fromRoom(addedRoom);
+    public Room room(@RequestParam Integer id, @RequestBody RoomModel roomModel) {
+        return roomService.addRoomByIdAndModel(id, roomModel);
     }
 }
