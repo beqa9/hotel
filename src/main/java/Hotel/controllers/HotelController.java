@@ -2,7 +2,9 @@ package Hotel.controllers;
 
 
 import Hotel.entities.Hotel;
+import Hotel.entities.Room;
 import Hotel.models.HotelModel;
+import Hotel.models.RoomModel;
 import Hotel.services.HotelService;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +24,19 @@ public class HotelController {
         return hotelService.getAllHotels();
     }
 
+    @GetMapping("/{id}")
+    public Hotel getHotelById(@RequestParam Integer id) {
+        return hotelService.getHotelById(id);
+    }
+
     @PostMapping("/add")
     public Hotel addHotel(@RequestParam Integer id, @RequestBody HotelModel hotelModel) {
-        return hotelService.addHotelByIdAndModel(id, hotelModel);
+        return hotelService.addHotelByModel(hotelModel);
     }
+
+    @PutMapping("/{id}/update")
+    public Hotel updateHotel(@PathVariable Integer id, @RequestBody HotelModel hotelModel) {
+        return hotelService.updateHotelByIdAndModel(id, hotelModel);
+    }
+
 }

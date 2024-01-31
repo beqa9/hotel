@@ -8,5 +8,8 @@ import java.util.List;
 public interface RoomService {
     List<Room> getAllRooms();
 
-    Room addRoomByIdAndModel(Integer id, RoomModel roomModel);
+    Room addRoomByModel(RoomModel roomModel);
+    Room updateRoomByIdAndModel(Integer id, RoomModel roomModel);
+    Room getRoomById(Integer id);
+
 }

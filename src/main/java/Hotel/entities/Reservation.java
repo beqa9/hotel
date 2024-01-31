@@ -13,6 +13,7 @@ import java.util.Date;
 @Table(schema = "public", name = "reservation")
 public class Reservation {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer reservationId;
 
     @ManyToOne

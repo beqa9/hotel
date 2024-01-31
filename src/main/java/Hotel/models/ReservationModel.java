@@ -7,7 +7,6 @@ import java.util.Date;
 
 @Builder
 public record ReservationModel(
-        Integer reservationId,
         Integer roomId,
         String guestName,
         Date checkinDate,

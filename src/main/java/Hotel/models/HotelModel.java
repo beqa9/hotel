@@ -4,7 +4,6 @@ import lombok.Builder;
 
 @Builder
 public record HotelModel(
-        Integer hotelId,
         String name,
         String description,
         String address,

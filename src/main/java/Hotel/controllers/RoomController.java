@@ -1,5 +1,6 @@
 package Hotel.controllers;
 
+import Hotel.entities.Hotel;
 import Hotel.entities.Room;
 import Hotel.models.RoomModel;
 import Hotel.services.RoomService;
@@ -22,7 +23,16 @@ public class RoomController {
     }
 
     @PostMapping("/add")
-    public Room room(@RequestParam Integer id, @RequestBody RoomModel roomModel) {
-        return roomService.addRoomByIdAndModel(id, roomModel);
+    public Room room(@RequestBody RoomModel roomModel) {
+        return roomService.addRoomByModel(roomModel);
+    }
+    @GetMapping("/{id}")
+    public Room getRoomById(@RequestParam Integer id) {
+        return roomService.getRoomById(id);
+    }
+
+    @PutMapping("/{id}/update")
+    public Room updateRoom(@PathVariable Integer id, @RequestBody RoomModel roomModel) {
+        return roomService.updateRoomByIdAndModel(id, roomModel);
     }
 }

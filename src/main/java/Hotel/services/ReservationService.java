@@ -9,4 +9,7 @@ public interface ReservationService {
     List<Reservation> getAllReservations();
 
     Reservation addReservationByIdAndModel(Integer id, ReservationModel reservationModel);
+
+    Reservation updateReservationByIdAndModel(Integer id, ReservationModel reservationModel);
+
 }

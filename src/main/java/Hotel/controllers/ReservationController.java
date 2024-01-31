@@ -25,4 +25,9 @@ public class ReservationController {
     public Reservation addReservation(@PathVariable Integer roomId, @RequestBody ReservationModel reservationModel) {
         return reservationService.addReservationByIdAndModel(roomId, reservationModel);
     }
+
+    @PutMapping("/{reservationId}/update")
+    public Reservation updateReservation(@PathVariable Integer reservationId, @RequestBody ReservationModel reservationModel) {
+        return reservationService.updateReservationByIdAndModel(reservationId, reservationModel);
+    }
 }
